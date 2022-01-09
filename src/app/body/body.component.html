@@ -1,0 +1,33 @@
+
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+<ul>
+  <div *ngFor='let goal of goals;let i = index'>
+
+<div class="card m-4">
+    
+    <li class="m-2" appHighlight> 
+        <p class="text-sm m-2">
+            {{goal.description}}
+  
+          </p>
+        ~  {{goal.author}}<br>
+    <p class="text-sm " style="font-size: 0.9em; color: brown;">posted on {{goal.postedDate|date}} </p>
+    </li>
+
+    <button class="btn btn-outline-primary m-3"  (click)='toggleDetails(i)'>More..</button>
+    <app-description *ngIf='goal.showDescription' [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-description>
+  </div>
+  </div>
+</ul>
+</div>
+</div>
+<div class="col-md-6">
+    <div class="card">
+    <app-quote-form (addGoal)="addNewGoal($event)"></app-quote-form>
+  </div>
+  </div>
+  </div>
+<p *ngIf='goals.length > 5'>You have too many goals</p>
