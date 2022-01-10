@@ -1,4 +1,11 @@
-+ # Quotes
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
+# + Quotes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
