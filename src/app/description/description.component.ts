@@ -25,12 +25,26 @@ export class DescriptionComponent implements OnInit {
     like = 0;
     dislike = 0;
 
+    
     upVote(){
-      this.like = this.like + 1;
+      if (this.dislike <= 0) {
+
+        this.like = this.like + 1;
+      } else {
+        this.like = this.like + 1;
+        this.dislike = this.dislike - 1;
+      }
+      
     }
 
     downVote(){
-      this.dislike = this.dislike + 1;
+      if (this.like <= 0) {
+        this.dislike = this.dislike + 1;
+      } else {
+        this.dislike = this.dislike + 1;
+        this.like = this.like - 1;
+      }
+    
     }
   constructor() { }
 
